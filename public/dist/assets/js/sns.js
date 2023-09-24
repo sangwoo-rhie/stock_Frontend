@@ -27,7 +27,7 @@ $(document).ready(function () {
 const getAllPosts = async (page, pageSize) => {
   try {
     const response = await axios.get(
-      `http://43.201.112.56:3000/challenge/publishedpost/allpost/?page=${page}&pageSize=${pageSize}`,
+      `http://3.35.216.14:3000/challenge/publishedpost/allpost/?page=${page}&pageSize=${pageSize}`,
       {
         headers: {
           Authorization: accessToken,
