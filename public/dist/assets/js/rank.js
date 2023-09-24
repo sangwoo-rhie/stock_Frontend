@@ -1,4 +1,4 @@
-const rankPort = '3.38.108.185';
+const rankPort = '43.201.112.56';
 
 const urlParams = new URLSearchParams(window.location.search);
 const challengeId = urlParams.get('id');
