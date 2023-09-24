@@ -1,4 +1,4 @@
-const myinfoPort = '43.201.112.56';
+const myinfoPort = '43.201.112.56:3000';
 
 // 로그인 여부 확인
 const accessToken = localStorage.getItem('cookie');
