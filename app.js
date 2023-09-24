@@ -5,13 +5,12 @@ const path = require('path');
 const app = express();
 const port = 3001;
 
-app.use(
-  cors({
-    origin: 'http://43.201.112.56:3000',
-    credentials: true,
-  }),
-);
+let corsOptions = {
+  origin: '*', // 출처 허용 옵션
+  credential: true, // 사용자 인증이 필요한 리소스(쿠키 ..등) 접근
+};
 
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, 'public/dist')));
 app.use(express.json());
