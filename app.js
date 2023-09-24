@@ -5,12 +5,12 @@ const path = require('path');
 const app = express();
 const port = 3001;
 
-app.use(
-  cors({
-    origin: '*',
-    credentials: true,
-  }),
-);
+// app.use(
+//   cors({
+//     origin: '*',
+//     credentials: true,
+//   }),
+// );
 
 app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(path.join(__dirname, 'public/dist')));
