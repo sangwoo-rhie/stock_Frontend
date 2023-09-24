@@ -1,4 +1,4 @@
-const signupPort = '43.201.112.56:3000';
+const signupPort = '43.201.112.56';
 // const signupPort = 'localhost';
 
 // 인증번호 발송 (재용)
