@@ -6,8 +6,8 @@ const app = express();
 const port = 3001;
 
 let corsOptions = {
-  origin: '*', // 출처 허용 옵션
-  credential: true, // 사용자 인증이 필요한 리소스(쿠키 ..등) 접근
+  origin: '*',
+  credential: true,
 };
 
 app.use(cors(corsOptions));
@@ -16,7 +16,7 @@ app.use('/', express.static(path.join(__dirname, 'public/dist')));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/dist', 'login.html'));
+  res.sendFile(path.join(__dirname, 'public/dist', 'outbody.html'));
 });
 
 app.listen(port, () => {
