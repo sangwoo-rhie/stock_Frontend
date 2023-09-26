@@ -33,15 +33,19 @@
   margin-bottom: 30px;
 }
 
-.kakao-btn {
+.btn-kakao {
   background-color: #fee500;
   border: none;
-  height: 50px;
-  width: 250px;
-  border-radius: 12px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
   color: #000000 85%;
 }
 
-.kakao-btn:hover {
-  background-color: #ffde00;
+.btn-kakao:hover {
+  background-color: #d0b91f;
 }
