@@ -12,7 +12,10 @@ let corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
-app.use('/', express.static(path.join(__dirname, 'public/dist')));
+app.use(
+  '/',
+  express.static(path.join(__dirname, 'public/dist', 'outbody.html')),
+);
 app.use(express.json());
 
 app.get('/', (req, res) => {
