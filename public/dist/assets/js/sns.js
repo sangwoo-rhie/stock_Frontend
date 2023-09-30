@@ -1,3 +1,4 @@
+const snsPort = '3.35.216.14:3000';
 const accessToken = localStorage.getItem('cookie');
 const expiration = localStorage.getItem('tokenExpiration');
 const isTokenExpired = new Date().getTime() > expiration;
@@ -27,7 +28,7 @@ $(document).ready(function () {
 const getAllPosts = async (page, pageSize) => {
   try {
     const response = await axios.get(
-      `http://3.35.216.14:3000/challenge/publishedpost/allpost/?page=${page}&pageSize=${pageSize}`,
+      `http://${snsPort}/challenge/publishedpost/allpost/?page=${page}&pageSize=${pageSize}`,
       {
         headers: {
           Authorization: accessToken,
@@ -199,7 +200,7 @@ const getAllPosts = async (page, pageSize) => {
 
   async function getTotaldata(page, pageSize) {
     const data = await axios.get(
-      `http://sunsurely.shop/challenge/publishedpost/allpost/?page=${page}&pageSize=${pageSize}`,
+      `http://${snsPort}/challenge/publishedpost/allpost/?page=${page}&pageSize=${pageSize}`,
       {
         headers: {
           Authorization: ` ${accessToken}`,
