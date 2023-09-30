@@ -5,6 +5,7 @@ if (!adminToken) {
   alert('접근 권한이 없습니다.');
   window.history.back();
 }
+
 // 1. 관리자 확인용 비밀번호 입력모달
 document.getElementById('enterPassword').onclick = function (e) {
   e.preventDefault();
@@ -30,7 +31,7 @@ $('#submitAdmin').on('click', async () => {
     alert('비밀번호를 입력해주세요.');
     return;
   }
-  const data = { password: password };
+  const data = { password };
 
   await axios
     .post(`http://${adminPort}/user/me/admin`, data, {
