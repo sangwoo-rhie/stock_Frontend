@@ -101,7 +101,7 @@
           <div class="section-header">
             <h1>OUTBODY</h1>
             <div class="section-header-breadcrumb">
-              <div class="breadcrumb-item active"><a href="admin.html">Admin</a></div>
+              <div class="breadcrumb-item active" id="enterPassword">Admin</a></div>
             </div>
           </div>
 
@@ -263,6 +263,41 @@
           </div>
         </section>
       </div>
+
+<!-- 모달 : 관리자 비밀번호 입력 -->
+<div class="modal fade" tabindex="-1" role="dialog" id="adminEntrance">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">관리자</h5>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label>비밀번호</label>
+          <div class="input-group">
+            <input type="password" class="form-control datemask" placeholder="비밀번호를 입력해주세요" id="adminPassword" />
+            <div class="input-group-append">
+              <button type='button'
+                class='btn btn-outline-secondary border-left-0 border-0 d-block text-success'><i id='eyeCurrent'
+                  class='fa fa-eye'></i></button>
+            </div>
+          </div>
+          관리자만 조회 가능합니다.
+        </div>
+
+      </div>
+      <div class="modal-footer" style="margin-bottom: 20px;">
+        <button class="btn btn-primary" id="submitAdmin">
+          완료
+        </button>
+        <button class="btn btn-secondary" id="passwordcancel">
+          취소
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
       <footer class="main-footer" style="position:fixed; bottom:0">
         <div class="footer-left">
           Copyright &copy; 2023 
@@ -297,5 +332,6 @@
   <script src="./jquery-3.4.1.min.js"></script>
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/notice.js"></script>
+  <script src="assets/js/admin.js"></script>
 </body>
 </html>

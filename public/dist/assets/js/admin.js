@@ -5,8 +5,16 @@ if (!adminToken) {
   alert('접근 권한이 없습니다.');
   window.history.back();
 }
+// 1. 관리자 확인용 비밀번호 입력모달
+document.getElementById('enterPassword').onclick = function (e) {
+  e.preventDefault();
+  $('#adminEntrance').modal('show');
+};
+document.getElementById('passwordcancel').onclick = function () {
+  $('#adminEntrance').modal('hide');
+};
 
-// 1. 블랙리스트 생성모달
+// 2. 블랙리스트 생성모달
 document.getElementById('addBlackList').onclick = function (e) {
   e.preventDefault();
   $('#blackListUseradd').modal('show');
@@ -14,6 +22,30 @@ document.getElementById('addBlackList').onclick = function (e) {
 document.getElementById('cancelBlackList').onclick = function () {
   $('#blackListUseradd').modal('hide');
 };
+
+// 비밀번호 입력
+$('#submitAdmin').on('click', async () => {
+  const password = $('#adminPassword').val();
+  if (!password) {
+    alert('비밀번호를 입력해주세요.');
+    return;
+  }
+  const data = { password: password };
+
+  await axios
+    .post(`http://${adminPort}/user/me/admin`, data, {
+      headers: {
+        Authorization: adminToken,
+      },
+    })
+    .then((response) => {
+      if (response.data.data.status === 'admin') {
+        location.href = 'admin.html';
+      } else {
+        alert('접근 권한이 없습니다.');
+      }
+    });
+});
 
 // 이메일로 회원 조회 & 블랙리스트 생성 (성공)
 $('#findBlackList').on('click', async () => {

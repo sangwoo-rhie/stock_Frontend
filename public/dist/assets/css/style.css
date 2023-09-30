@@ -3939,4 +3939,17 @@ body:not(.sidebar-mini)
   line-height: 60%;
 }
 
+/* 기본 스타일 */
+.breadcrumb-item {
+  text-decoration: none; /* 밑줄 제거 */
+  color: #000; /* 텍스트 색상 */
+  cursor: pointer; /* 커서 모양 변경 */
+}
+
+/* 호버 효과 */
+.breadcrumb-item:hover {
+  text-decoration: underline; /* 호버 시 밑줄 추가 */
+  color: #00f; /* 호버 시 텍스트 색상 변경 */
+}
+
 /*# sourceMappingURL=style.css.map */
