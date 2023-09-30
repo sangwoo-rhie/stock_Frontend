@@ -240,7 +240,7 @@ async function initMyPage() {
     $(profileImg).attr(
       'src',
       myData.imgUrl
-        ? `https://outbody.s3.amazonaws.com/${myData.imgUrl}`
+        ? `http://wildbody.s3.amazonaws.com/${myData.imgUrl}`
         : 'assets/img/avatar/avatar-1.png',
     );
     $(myFriends).html(followTemp);
@@ -364,7 +364,7 @@ $('#searchFriendByEmail').on('click', async () => {
         <div id=${user.id}>
           <img class="rounded-circle" src=${
             user.imgUrl
-              ? `https://outbody.s3.amazonaws.com/${user.imgUrl}`
+              ? `http://wildbody.s3.amazonaws.com/${user.imgUrl}`
               : 'assets/img/avatar/avatar-1.png'
           } style="width:50px; margin-right:10px">
           <span>${user.name}(${emailText})</span>

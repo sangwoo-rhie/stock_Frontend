@@ -54,7 +54,7 @@ async function initChallengeList(option) {
       challengeTable.innerHTML += response.data.data.challenges
         .map((challenge) => {
           const profileImage = challenge.hostImageUrl
-            ? `https://inflearn-nest-cat.s3.amazonaws.com/${challenge.hostImageUrl}`
+            ? `http://wildbody.s3.amazonaws.com/${challenge.hostImageUrl}`
             : `assets/img/avatar/avatar-1.png`;
 
           let publicView = challenge.publicView;
@@ -178,7 +178,7 @@ async function initChallengeList(option) {
             challengeTable.innerHTML += data.challenges
               .map((challenge) => {
                 const profileImage = challenge.hostImageUrl
-                  ? `http://inflearn-nest-cat.s3.amazonaws.com/${challenge.hostImageUrl}`
+                  ? `http://wildbody.s3.amazonaws.com/${challenge.hostImageUrl}`
                   : `assets/img/avatar/avatar-1.png`;
 
                 let publicView = challenge.publicView;
@@ -281,7 +281,7 @@ async function initChallengeList(option) {
             challengeTable.innerHTML += data.challenges
               .map((challenge) => {
                 const profileImage = challenge.hostImageUrl
-                  ? `http://inflearn-nest-cat.s3.amazonaws.com/${challenge.hostImageUrl}`
+                  ? `http://wildbody.s3.amazonaws.com/${challenge.hostImageUrl}`
                   : `assets/img/avatar/avatar-1.png`;
 
                 let publicView = challenge.publicView;
@@ -387,7 +387,7 @@ async function initChallengeList(option) {
             challengeTable.innerHTML += data.challenges
               .map((challenge) => {
                 const profileImage = challenge.hostImageUrl
-                  ? `http://inflearn-nest-cat.s3.amazonaws.com/${challenge.hostImageUrl}`
+                  ? `http://wildbody.s3.amazonaws.com/${challenge.hostImageUrl}`
                   : `assets/img/avatar/avatar-1.png`;
 
                 let publicView = challenge.publicView;

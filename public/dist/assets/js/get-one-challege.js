@@ -94,7 +94,7 @@ async function getChallengeDetail() {
       setInterval(updateTime, 1000);
 
       const profileImage = challenge.userImageUrl
-        ? `http://inflearn-nest-cat.s3.amazonaws.com/${challenge.userImageUrl}`
+        ? `http://wildbody.s3.amazonaws.com/${challenge.userImageUrl}`
         : `assets/img/avatar/avatar-1.png`;
 
       const challengeDetail = document.querySelector('#challenge-detail');
@@ -231,7 +231,7 @@ async function getChallengers() {
       challengerList.innerHTML += response.data.data
         .map((challenger) => {
           const profileImage = challenger.user.imgUrl
-            ? `http://inflearn-nest-cat.s3.amazonaws.com/${challenger.user.imgUrl}`
+            ? `http://wildbody.s3.amazonaws.com/${challenger.user.imgUrl}`
             : `assets/img/avatar/avatar-1.png`;
 
           return `<li class="media">
@@ -378,7 +378,7 @@ $('#send-invitation-button').on('click', async () => {
         <div id=${friend.id}>
           <img class="rounded-circle" src=${
             friend.imgUrl
-              ? `http://inflearn-nest-cat.s3.amazonaws.com/${friend.imgUrl}`
+              ? `http://wildbody.s3.amazonaws.com/${friend.imgUrl}`
               : 'assets/img/avatar/avatar-1.png'
           } style="width:50px; margin-right:10px">
           <span> ${friend.name}(${friend.email})</span>
