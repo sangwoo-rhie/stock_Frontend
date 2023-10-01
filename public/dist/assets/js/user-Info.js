@@ -1,4 +1,4 @@
-const userInfoPort = '13.124.4.226:3000';
+const userInfoPort = '52.78.126.125:3000';
 
 const userInfoParams = new URLSearchParams(window.location.search);
 const userId = userInfoParams.get('id');

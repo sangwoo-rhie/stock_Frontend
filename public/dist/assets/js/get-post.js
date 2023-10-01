@@ -1,4 +1,4 @@
-const getPostPort = '13.124.4.226:3000';
+const getPostPort = '52.78.126.125:3000';
 
 const postParams = new URLSearchParams(window.location.search);
 const challengeId = postParams.get('id');
