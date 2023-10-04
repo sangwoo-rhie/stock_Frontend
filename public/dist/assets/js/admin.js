@@ -1,10 +1,10 @@
 const adminPort = '52.78.126.125:3000';
 
 const adminToken = localStorage.getItem('cookie');
-if (!adminToken) {
-  alert('접근 권한이 없습니다.');
-  window.history.back();
-}
+// if (!adminToken) {
+//   alert('접근 권한이 없습니다.');
+//   window.history.back();
+// }
 
 // 1. 관리자 확인용 비밀번호 입력모달
 document.getElementById('enterPassword').onclick = function (e) {
