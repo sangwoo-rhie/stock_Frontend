@@ -258,7 +258,7 @@ const getPosts = async (page, pageSize) => {
   }
 };
 
-// 오운완 생성 (재용 수정)
+// 오운완 생성
 const createPost = async () => {
   try {
     const description = $('.desc_input').val();

@@ -93,7 +93,7 @@ document.getElementById('searchfriendCancel').onclick = function () {
   $('#searchfriendModal').modal('hide');
 };
 
-// 내 정보 수정 (재용 작성)
+// 내 정보 수정
 $('#update-userInfo-button').click(updateUserInfo);
 accessToken;
 async function updateUserInfo() {
