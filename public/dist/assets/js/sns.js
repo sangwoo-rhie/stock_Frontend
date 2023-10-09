@@ -1,4 +1,5 @@
 const snsPort = '52.78.126.125:3000';
+// const snsPort = 'localhost:3000';
 const accessToken = localStorage.getItem('cookie');
 const expiration = localStorage.getItem('tokenExpiration');
 const isTokenExpired = new Date().getTime() > expiration;

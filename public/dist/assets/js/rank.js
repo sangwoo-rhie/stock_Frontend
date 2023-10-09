@@ -1,4 +1,5 @@
 const rankPort = '52.78.126.125:3000';
+// const rankPort = 'localhost:3000';
 
 const urlParams = new URLSearchParams(window.location.search);
 const challengeId = urlParams.get('id');

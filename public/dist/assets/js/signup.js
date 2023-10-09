@@ -1,5 +1,5 @@
 const signupPort = '52.78.126.125:3000';
-// const signupPort = 'localhost';
+// const signupPort = 'localhost:3000';
 
 // 인증번호 발송
 $('#sendEmail').click(() => {

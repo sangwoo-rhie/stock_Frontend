@@ -1,5 +1,5 @@
-const loginPort = '52.78.126.125:3000';
-// const loginPort = 'localhost';
+// const loginPort = '52.78.126.125:3000';
+const loginPort = 'localhost:3000';
 
 $(document).ready(function () {
   $('.btn-show-pass').on('click', function (event) {
@@ -48,5 +48,46 @@ const login = async () => {
     .catch((error) => {
       alert(error.response.data.message);
     });
+
+  // 카카오로그인
+  await axios
+    .post(`http://${loginPort}/auth/kakao/login`, {
+      email: $('#email').val(),
+      password: $('#password').val(),
+    })
+    .then((response) => {
+      localStorage.setItem(
+        `cookie`,
+        `Bearer ${response.data.data.accessToken}`,
+      );
+      const expirationDate = new Date().getTime() + 21600 * 1000;
+      localStorage.setItem('tokenExpiration', expirationDate);
+      alert('반갑습니다 회원님!');
+      location.href = `main.html?id=${response.data.data.userId}`;
+    })
+    .catch((error) => {
+      alert(error.response.data.message);
+    });
+
+  // 구글로그인
+  await axios
+    .post(`http://${loginPort}/auth/google/login`, {
+      email: $('#email').val(),
+      password: $('#password').val(),
+    })
+    .then((response) => {
+      localStorage.setItem(
+        `cookie`,
+        `Bearer ${response.data.data.accessToken}`,
+      );
+      const expirationDate = new Date().getTime() + 21600 * 1000;
+      localStorage.setItem('tokenExpiration', expirationDate);
+      alert('반갑습니다 회원님!');
+      location.href = `main.html?id=${response.data.data.userId}`;
+    })
+    .catch((error) => {
+      alert(error.response.data.message);
+    });
 };
+
 $('#login-btn').click(login);

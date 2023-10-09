@@ -1,5 +1,5 @@
 const getOneChallengePort = '52.78.126.125:3000';
-// const getOneChallengePort = 'localhost';
+// const getOneChallengePort = 'localhost:3000';
 
 const urlParams = new URLSearchParams(window.location.search);
 const challengeId = urlParams.get('id');
