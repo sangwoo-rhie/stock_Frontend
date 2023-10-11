@@ -1,4 +1,4 @@
-const myinfoPort = '3.39.9.221:3000';
+const myinfoPort = '43.201.62.246:3000';
 // const myinfoPort = 'localhost:3000';
 
 // 로그인 여부 확인
