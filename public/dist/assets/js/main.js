@@ -1,4 +1,4 @@
-const mainPort = '43.201.62.246:3000';
+const mainPort = '13.209.65.45:3000';
 // const mainPort = 'localhost:3000';
 const mainToken = localStorage.getItem('cookie');
 const expiration = localStorage.getItem('tokenExpiration');

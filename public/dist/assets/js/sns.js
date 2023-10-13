@@ -1,4 +1,4 @@
-const snsPort = '43.201.62.246:3000';
+const snsPort = '13.209.65.45:3000';
 // const snsPort = 'localhost:3000';
 const accessToken = localStorage.getItem('cookie');
 const expiration = localStorage.getItem('tokenExpiration');
