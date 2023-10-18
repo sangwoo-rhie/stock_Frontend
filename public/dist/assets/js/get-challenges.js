@@ -1,4 +1,4 @@
-const getChallengesPort = '13.209.65.45:3000';
+const getChallengesPort = '52.79.115.32:3000';
 // const getChallengesPort = 'localhost:3000';
 
 const getChallengesToken = localStorage.getItem('cookie');

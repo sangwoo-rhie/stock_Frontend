@@ -1,4 +1,4 @@
-// const loginPort = '13.209.65.45:3000;
+// const loginPort = '52.79.115.32:3000;
 const loginPort = 'localhost:3000';
 
 $(document).ready(function () {

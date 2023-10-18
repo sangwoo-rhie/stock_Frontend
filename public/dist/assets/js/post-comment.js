@@ -1,4 +1,4 @@
-const postCommentPort = '13.209.65.45:3000';
+const postCommentPort = '52.79.115.32:3000';
 // const postCommentPort = 'localhost:3000';
 
 const commentParams = new URLSearchParams(window.location.search);

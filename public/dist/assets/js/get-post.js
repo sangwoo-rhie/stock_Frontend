@@ -1,4 +1,4 @@
-const getPostPort = '13.209.65.45:3000';
+const getPostPort = '52.79.115.32:3000';
 // const getPostPort = 'localhost:3000';
 
 const postParams = new URLSearchParams(window.location.search);

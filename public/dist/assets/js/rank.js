@@ -1,4 +1,4 @@
-const rankPort = '13.209.65.45:3000';
+const rankPort = '52.79.115.32:3000';
 // const rankPort = 'localhost:3000';
 
 const urlParams = new URLSearchParams(window.location.search);

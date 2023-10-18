@@ -1,4 +1,4 @@
-const userInfoPort = '13.209.65.45:3000';
+const userInfoPort = '52.79.115.32:3000';
 // const userInfoPort = 'localhost:3000';
 
 const userInfoParams = new URLSearchParams(window.location.search);
