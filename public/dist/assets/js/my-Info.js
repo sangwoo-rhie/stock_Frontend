@@ -1,5 +1,5 @@
-const myinfoPort = '52.79.115.32:3000';
-// const myinfoPort = 'localhost:3000';
+// const myinfoPort = '52.79.115.32:3000';
+const myinfoPort = 'localhost:3000';
 
 // 로그인 여부 확인
 const accessToken = localStorage.getItem('cookie');
@@ -68,13 +68,13 @@ document.getElementById('editcancel').onclick = function () {
 };
 
 // 2. 비밀번호수정 모달
-document.getElementById('passwordEdit').onclick = function (e) {
-  e.preventDefault();
-  $('#pwEditModal').modal('show');
-};
-document.getElementById('passwordcancel').onclick = function () {
-  $('#pwEditModal').modal('hide');
-};
+// document.getElementById('passwordEdit').onclick = function (e) {
+//   e.preventDefault();
+//   $('#pwEditModal').modal('show');
+// };
+// document.getElementById('passwordcancel').onclick = function () {
+//   $('#pwEditModal').modal('hide');
+// };
 
 // 3. 회원탈퇴 모달
 document.getElementById('signout').onclick = function (e) {
@@ -98,19 +98,19 @@ document.getElementById('searchfriendCancel').onclick = function () {
 $('#update-userInfo-button').click(updateUserInfo);
 accessToken;
 async function updateUserInfo() {
-  const profileImage = $('#profile-image-upload')[0].files[0];
-  const birthday = $('#user-birthday').val();
-  const description = $('#user-description').val();
-  const myName = $('#user-name').val();
+  const current = $('#current').val();
+  const newpw = $('#newpw').val();
+  const nickname = $('#nickname').val();
+  const organization = $('#organization').val();
 
   const formData = new FormData();
-  formData.append('image', profileImage);
-  formData.append('birthday', birthday);
-  formData.append('description', description);
-  formData.append('name', myName);
+  formData.append('current', current);
+  formData.append('newpw', newpw);
+  formData.append('nickname', nickname);
+  formData.append('organization', organization);
 
   await axios
-    .patch(`http://${myinfoPort}/user/me`, formData, {
+    .patch(`http://${myinfoPort}/user/myinfo`, formData, {
       headers: {
         Authorization: accessToken,
         'Content-Type': 'multipart/form-data',
@@ -153,69 +153,20 @@ image.addEventListener('change', (event) => {
 
 //내 정보 조회
 async function initMyPage() {
-  const pointTag = $('#my-point');
-  const rankTag = $('#my-rank');
-  const friendTag = $('#friend-count');
-  const nameTag = $('#descriptionName');
-  const description = $('#self-description');
   const email = $('#emailaddress');
-  const birthday = $('#bdaytag');
-  const gender = $('#mygender');
-  const createdAt = $('#createdate');
-  const myFriends = $('#my-friends-list');
-  const profileImg = $('#profile-image');
+  const nickname = $('#mynickname');
+  const userrole = $('#userrole');
+  const myorganization = $('#myorganization');
 
   try {
-    const { data } = await axios.get(`http://${myinfoPort}/user/me/profile`, {
+    const { data } = await axios.get(`http://${myinfoPort}/user/myinfo`, {
       headers: {
         Authorization: accessToken,
       },
     });
-
-    const challengeId = data.data.challengeId;
-    if (challengeId) {
-      const challengeData = await axios.get(
-        `http://${myinfoPort}/challenge/${challengeId}`,
-        {
-          headers: {
-            Authorization: accessToken,
-          },
-        },
-      );
-
-      const title = $('#title');
-      const challengeDesc = $('#desc');
-      const date = $('#date');
-
-      $(title).text(`제목: ${challengeData.data.data.title}`);
-      $(challengeDesc).text(
-        `설명: ${challengeData.data.data.description.replace(/<[^>]*>/g, '')}`,
-      );
-      $(date).text(
-        `도전 기간: ${challengeData.data.data.startDate} ~ ${challengeData.data.data.endDate}`,
-      );
-    }
-
-    const rankData = await axios.get(`http://${myinfoPort}/user/me/rank`, {
-      headers: {
-        Authorization: accessToken,
-      },
-    });
-
+    console.log('data', data);
     const myData = data.data.rest;
 
-    const followersInfo = data.data.followersInfo;
-    $(pointTag).text(myData.point);
-    $(friendTag).text(followersInfo.length);
-    $(nameTag).text(myData.name);
-    if (challengeId) {
-      $('#challenge-card').on('click', () => {
-        window.location.href = `get-one-challenge.html?id=${challengeId}`;
-      });
-    }
-
-    $(description).text(myData.description);
-    $(rankTag).text(rankData.data.data);
     $(email).text(myData.email);
     $(birthday).text(myData.birthday ? myData.birthday : '미입력');
     $(gender).text(myData.gender ? myData.gender : '미입력');
@@ -240,7 +191,7 @@ async function initMyPage() {
     $(profileImg).attr(
       'src',
       myData.imgUrl
-        ? `http://wildbody.s3.amazonaws.com/${myData.imgUrl}`
+        ? `http://Stock Project.s3.amazonaws.com/${myData.imgUrl}`
         : 'assets/img/avatar/avatar-1.png',
     );
     $(myFriends).html(followTemp);
@@ -256,26 +207,6 @@ async function initMyPage() {
   }
 }
 
-// 친구 삭제
-$(document).on('click', '.delete-friend-button', function () {
-  deleteFriend($(this).attr('followerId'));
-});
-async function deleteFriend(followerId) {
-  try {
-    await axios.delete(`http://${myinfoPort}/follow/${followerId}`, {
-      headers: {
-        Authorization: accessToken,
-      },
-    });
-    alert('친구 삭제 완료');
-    location.reload();
-  } catch (error) {
-    alert(error.response.data.message);
-    location.reload();
-  }
-}
-
-// 비밀번호변경 (성공)
 async function editPassword() {
   const current = $('#current').val();
   const newpw = $('#newpw').val();
@@ -364,7 +295,7 @@ $('#searchFriendByEmail').on('click', async () => {
         <div id=${user.id}>
           <img class="rounded-circle" src=${
             user.imgUrl
-              ? `http://wildbody.s3.amazonaws.com/${user.imgUrl}`
+              ? `http://Stock Project.s3.amazonaws.com/${user.imgUrl}`
               : 'assets/img/avatar/avatar-1.png'
           } style="width:50px; margin-right:10px">
           <span>${user.name}(${emailText})</span>

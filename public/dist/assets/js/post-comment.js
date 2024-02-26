@@ -29,7 +29,7 @@ const getOnePost = async () => {
     const post = response.data.data;
 
     const profileImage = post.userImage
-      ? `http://wildbody.s3.amazonaws.com/${post.userImage}`
+      ? `http://Stock Project.s3.amazonaws.com/${post.userImage}`
       : `assets/img/avatar/avatar-1.png`;
 
     let temphtml = `<div class="card-header">
@@ -49,7 +49,7 @@ const getOnePost = async () => {
                         <div class="carousel-inner">
                           <div class="carousel-item active">
                             <img class="d-block w-100"
-                            src="http://wildbody.s3.amazonaws.com/${post.imgUrl}"
+                            src="http://Stock Project.s3.amazonaws.com/${post.imgUrl}"
                             style="margin-botton: 20px;">
                             <h6 style="float: left; margin-top: 20px">${post.description}</h6>
                           </div>
@@ -78,7 +78,7 @@ const getComment = async () => {
     let allComments = '';
     response.data.data.forEach((comment) => {
       const profileImage = comment.userImg
-        ? `http://wildbody.s3.amazonaws.com/${comment.userImg}`
+        ? `http://Stock Project.s3.amazonaws.com/${comment.userImg}`
         : `assets/img/avatar/avatar-1.png`;
 
       let temphtml = `<li class="media" id="comment-${comment.commentId}">

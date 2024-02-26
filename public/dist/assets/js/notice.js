@@ -65,7 +65,7 @@ async function initMessagesBox() {
 
     const id = res.userId;
     const profileImage = res.imgUrl
-      ? `http://wildbody.s3.amazonaws.com/${res.imgUrl}`
+      ? `http://Stock Project.s3.amazonaws.com/${res.imgUrl}`
       : `assets/img/avatar/avatar-1.png`;
 
     const parts = res.message.split('님이');

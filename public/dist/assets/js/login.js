@@ -27,63 +27,17 @@ const login = async () => {
   }
 
   await axios
-    .post(`http://${loginPort}/auth/login`, {
+    .post(`http://${loginPort}/user/signin`, {
       email: $('#email').val(),
       password: $('#password').val(),
     })
     .then((response) => {
-      localStorage.setItem(
-        `cookie`,
-        `Bearer ${response.data.data.accessToken}`,
-      );
-      const expirationDate = new Date().getTime() + 21600 * 1000;
-      localStorage.setItem('tokenExpiration', expirationDate);
-      if (response.data.data.status === 'admin') {
-        location.href = 'admin.html';
-      } else {
-        alert('반갑습니다 회원님!');
-        location.href = `main.html?id=${response.data.data.userId}`;
-      }
-    })
-    .catch((error) => {
-      alert(error.response.data.message);
-    });
-
-  // 카카오로그인
-  await axios
-    .post(`http://${loginPort}/auth/kakao/login`, {
-      email: $('#email').val(),
-      password: $('#password').val(),
-    })
-    .then((response) => {
-      localStorage.setItem(
-        `cookie`,
-        `Bearer ${response.data.data.accessToken}`,
-      );
+      localStorage.setItem(`cookie`, `Bearer ${response.data.data.token}`);
       const expirationDate = new Date().getTime() + 21600 * 1000;
       localStorage.setItem('tokenExpiration', expirationDate);
       alert('반갑습니다 회원님!');
-      location.href = `main.html?id=${response.data.data.userId}`;
-    })
-    .catch((error) => {
-      alert(error.response.data.message);
-    });
-
-  // 구글로그인
-  await axios
-    .post(`http://${loginPort}/auth/google/login`, {
-      email: $('#email').val(),
-      password: $('#password').val(),
-    })
-    .then((response) => {
-      localStorage.setItem(
-        `cookie`,
-        `Bearer ${response.data.data.accessToken}`,
-      );
-      const expirationDate = new Date().getTime() + 21600 * 1000;
-      localStorage.setItem('tokenExpiration', expirationDate);
-      alert('반갑습니다 회원님!');
-      location.href = `main.html?id=${response.data.data.userId}`;
+      // 아래 주소는 로그인 이후 메인페이지로 이동하도록 주소를 수정해야됨
+      location.href = `stock_list.html`;
     })
     .catch((error) => {
       alert(error.response.data.message);

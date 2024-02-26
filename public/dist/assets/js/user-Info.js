@@ -36,7 +36,7 @@ async function userPage() {
     $('#profile-image').attr(
       'src',
       user.imgUrl
-        ? `http://wildbody.s3.amazonaws.com/${user.imgUrl}`
+        ? `http://Stock Project.s3.amazonaws.com/${user.imgUrl}`
         : 'assets/img/avatar/avatar-1.png',
     );
     $('#user-point').text(user.point);

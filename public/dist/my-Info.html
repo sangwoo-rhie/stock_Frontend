@@ -78,7 +78,7 @@
                   </div>
                   <div class="dropdown-item-desc">
                     <p id="inviteUserMessage">Hello, Bro!</p>
-                    <div id="inviteUsercreatedAt">2023.08.31</div>
+                    <div id="inviteUsercreatedAt">2024.08.31</div>
                     <button class="btn btn-sm btn accept-friend" data-follower-id="${message.userId}">
                       수락
                     </button>
@@ -94,7 +94,7 @@
                   </div>
                   <div class="dropdown-item-desc">
                     <p id="challengeMessage">Hello, Bro!</p>
-                    <div id="challengeCreatedAt">2023.08.31</div>
+                    <div id="challengeCreatedAt">2024.08.31</div>
                     <button class="btn btn-sm btn accept-challenge" data-user-id="${message.userId}">
                       수락
                     </button>
@@ -175,7 +175,7 @@
             </li>
             <li class="menu-header">Rank</li>
             <li>
-              <a href="rank.html"><i class="fas fa-th"></i>
+              <a href="stock.html"><i class="fas fa-th"></i>
                 <span>순위</span></a>
             </li>
             <li class="menu-header">Service</li>
@@ -197,7 +197,7 @@
             <h2 class="section-title" id="greeting">회원님의 정보</h2>
 
             <div class="row">
-              <div class="col-12 col-md-12 col-lg-5">
+              <!-- <div class="col-12 col-md-12 col-lg-5">
                 <div class="card profile-widget">
                   <div class="profile-widget-header">
                     <img id="profile-image" alt="image" src="assets/img/avatar/avatar-1.png"
@@ -206,19 +206,19 @@
                       <div class="profile-widget-item">
                         <div class="profile-widget-item-label">- 점수 -</div>
                         <div class="profile-widget-item-value" id="my-point">
-                          <!-- 사용자 점수 -->
+                          // 사용자 점수 
                         </div>
                       </div>
                       <div class="profile-widget-item">
                         <div class="profile-widget-item-label">- 순위 -</div>
                         <div id="my-rank" class="profile-widget-item-value">
-                          <!-- 사용자 순위 -->
+                          // 사용자 순위 
                         </div>
                       </div>
                       <div class="profile-widget-item">
                         <div class="profile-widget-item-label">- 친구 수 -</div>
                         <div class="profile-widget-item-value" id="friend-count">
-                          <!-- 사용자 친구 수 -->
+                          // 사용자 친구 수 
                         </div>
                       </div>
                     </div>
@@ -226,13 +226,13 @@
                   <div class="profile-widget-description">
                     <div class="profile-widget-name">
                       <div id="descriptionName" style="font-weight: bold; margin-left: 20px;">
-                        <!-- 사용자 이름 -->
+                        // 사용자 이름 
                       </div>
                       <div class="text-muted d-inline font-weight-normal">
                       </div>
                     </div>
                     <div id="self-description" style="margin-left: 20px;">
-                      <!-- 자기소개 -->
+                      // 자기소개 
                     </div>
                     <br />
 
@@ -250,10 +250,9 @@
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div class="col-12 col-md-12 col-lg-7">
                 <div class="card card-primary">
@@ -261,10 +260,10 @@
                     <div class="card-header">
                       <h4 id="informationName">내 정보</h4>
                       <div class="card-header-action">
+                        <!-- <a id="userInfoEdit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary"
+                          style="color: white;">내 정보 수정</a> -->
                         <a id="userInfoEdit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary"
                           style="color: white;">내 정보 수정</a>
-                        <a id="passwordEdit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary"
-                          style="color: white;">비밀번호 수정</a>
                         <a id="signout" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger"
                           style="color: white;">회원탈퇴</a>
                       </div>
@@ -272,65 +271,31 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="form-group col-md-6 col-12">
-                          <label>계정(e-mail)</label>
+                          <label>E-mail (계정)</label>
                           <div id="emailaddress"></div>
                           <div class="invalid-feedback"></div>
                         </div>
                         <div class="form-group col-md-6 col-12">
-                          <label>성별</label>
-                          <div id="mygender"></div>
+                          <label>닉네임</label>
+                          <div id="mynickname"></div>
                           <div class="invalid-feedback"></div>
                         </div>
                       </div>
                       <div class="row">
                         <div class="form-group col-md-6 col-12">
-                          <label>생일</label>
-                          <div id="bdaytag"></div>
+                          <label>회원유형</label>
+                          <div id="userrole"></div>
                           <div class="invalid-feedback"></div>
                         </div>
                         <div class="form-group col-md-6 col-12">
-                          <label>가입일</label>
-                          <div id="createdate"></div>
+                          <label>소속</label>
+                          <div id="myorganization"></div>
                           <div class="invalid-feedback"></div>
-                        </div>
-                      </div>
-                      <div class="row" id="mychatbox2">
-                        <div class="form-group col-12" data-toggle="tooltip">
-                          <div class="section-title mt-0">친구 목록</div>
-                        </div>
-                      </div>
-                      <div class="table-responsive">
-                        <div style="overflow-y: scroll; height: 200px">
-                          <table class="table table-sm">
-                            <thead>
-                              <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">이름</th>
-                                <th scope="col">계정(e-mail)</th>
-                                <th scope="col">점수</th>
-                                <th scope="col">순위</th>
-                                <th scope="col"></th>
-                              </tr>
-                            </thead>
-                            <tbody id="my-friends-list">
-                              <tr>
-                                <th scope="row"></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                              </tr>
-                            </tbody>
-                          </table>
                         </div>
                       </div>
                     </div>
 
                     <div class="card-footer text-right">
-                      <a id="searchfriend" data-toggle="modal" data-target="#exampleModal" style="font-size: 90%"
-                        href="#">
-                        <button class="btn btn-primary" style="border-radius:50%" width="50" height="50">친구 찾기</button>
-                      </a>
-                    </div>
                   </form>
                 </div>
               </div>
@@ -341,21 +306,13 @@
       </div>
 
       <!-- 모달 1: 정보 수정  -->
-      <div class="modal fade" tabindex="-1" role="dialog" id="infoEditModal">
+      <!-- <div class="modal fade" tabindex="-1" role="dialog" id="infoEditModal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">내 정보 수정</h5>
             </div>
             <div class="card-body">
-              <div class="form-group">
-                <label>내 사진 올리기</label>
-                <form>
-                  <div class="form-group">
-                    <input id="profile-image-upload" type="file" class="form-control-file" />
-                  </div>
-                </form>
-              </div>
               <div id="image-container"></div>
               <div class="form-group">
                 <label>이름</label>
@@ -378,18 +335,18 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <!-- 모달 2: 비밀번호 수정 -->
-      <div class="modal fade" tabindex="-1" role="dialog" id="pwEditModal">
+      <!-- 모달 2: 내정보 수정 -->
+      <div class="modal fade" tabindex="-1" role="dialog" id="infoEditModal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">비밀번호 수정</h5>
+              <h5 class="modal-title">내 정보 수정</h5>
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label>현재 비밀번호</label>
+                <label>기존 비밀번호</label>
                 <div class="input-group">
                   <input type="password" class="form-control datemask" placeholder="" id="current" />
                   <div class="input-group-append">
@@ -413,26 +370,36 @@
               </div>
 
               <div class="form-group">
-                <label>새로운 비밀번호 확인</label>
+                <label>닉네임</label>
                 <div class="input-group">
-                  <input type="password" class="form-control datemask" placeholder="" id="confirmpw" required />
+                  <input type="text" class="form-control datemask" placeholder="" id="nickname" />
                   <div class="input-group-append">
                     <button type='button'
-                      class='btn btn-outline-secondary border-left-0 border-0 d-block text-success'><i id='eyeConfirm'
-                        class='fa fa-eye'></i></button>
+                      class='btn btn-outline-secondary border-left-0 border-0 d-block text-success'><i></i></button>
                   </div>
                 </div>
               </div>
 
-
-
-              비밀번호는 최소 8자 이상, 영문 대소문자, 숫자를 포함해야 합니다.
+              <div class="form-group">
+                <label>소속</label>
+                <div class="input-group">
+                  <input type="text" class="form-control datemask" placeholder="" id="organization" />
+                  <div class="input-group-append">
+                    <button type='button'
+                      class='btn btn-outline-secondary border-left-0 border-0 d-block text-success'><i></i></button>
+                  </div>
+                </div>
+              </div>
+              비밀번호는 최소 6자 이상의 영문 대소문자 및 숫자와 특수문자를 포함해야 합니다.
+              <br>
+              비밀번호, 닉네임, 소속 중 하나라도 공란으로 하실 경우, 해당 정보는 기존 정보대로 유지되며, 하나라도 변경을 원하실 경우 기존 비밀번호를 입력하셔야 합니다.
             </div>
             <div class="modal-footer" style="margin-bottom: 20px;">
-              <button class="btn btn-primary" id="submit" onclick="editPassword();">
+              <button class="btn btn-primary" id="update-userInfo-button">
+                <!-- onclick="updateUserInfo();" -->
                 완료
               </button>
-              <button class="btn btn-secondary" id="passwordcancel">
+              <button class="btn btn-secondary" id="editcancel">
                 취소
               </button>
             </div>
@@ -506,9 +473,9 @@
 
       <footer class="main-footer"  style="position:fixed; bottom:0;">
         <div class="footer-left">
-          Copyright &copy; 2023
+          Copyright &copy; 2024
           <div class="bullet"></div>
-          Design By <a style="font-weight: bold;">WildBody</a>
+          Design By <a style="font-weight: bold;">Stock Project</a>
         </div>
         <div class="footer-right"></div>
       </footer>

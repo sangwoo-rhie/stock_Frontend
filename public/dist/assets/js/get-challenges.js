@@ -54,7 +54,7 @@ async function initChallengeList(option) {
       challengeTable.innerHTML += response.data.data.challenges
         .map((challenge) => {
           const profileImage = challenge.hostImageUrl
-            ? `http://wildbody.s3.amazonaws.com/${challenge.hostImageUrl}`
+            ? `http://Stock Project.s3.amazonaws.com/${challenge.hostImageUrl}`
             : `assets/img/avatar/avatar-1.png`;
 
           let publicView = challenge.publicView;
@@ -178,7 +178,7 @@ async function initChallengeList(option) {
             challengeTable.innerHTML += data.challenges
               .map((challenge) => {
                 const profileImage = challenge.hostImageUrl
-                  ? `http://wildbody.s3.amazonaws.com/${challenge.hostImageUrl}`
+                  ? `http://Stock Project.s3.amazonaws.com/${challenge.hostImageUrl}`
                   : `assets/img/avatar/avatar-1.png`;
 
                 let publicView = challenge.publicView;
@@ -191,8 +191,8 @@ async function initChallengeList(option) {
                 return `<tr id="${challenge.id}">
             <td>${challenge.title}</td>
             <td>${challenge.startDate} ~ ${challenge.endDate} (${
-                  challenge.challengeWeek
-                }주)</td>
+              challenge.challengeWeek
+            }주)</td>
             <td>
               <button class="btn btn-primary">
                 오운완 출석<span class="badge badge-transparent">${
@@ -281,7 +281,7 @@ async function initChallengeList(option) {
             challengeTable.innerHTML += data.challenges
               .map((challenge) => {
                 const profileImage = challenge.hostImageUrl
-                  ? `http://wildbody.s3.amazonaws.com/${challenge.hostImageUrl}`
+                  ? `http://Stock Project.s3.amazonaws.com/${challenge.hostImageUrl}`
                   : `assets/img/avatar/avatar-1.png`;
 
                 let publicView = challenge.publicView;
@@ -294,8 +294,8 @@ async function initChallengeList(option) {
                 return `<tr id="${challenge.id}">
             <td>${challenge.title}</td>
             <td>${challenge.startDate} ~ ${challenge.endDate} (${
-                  challenge.challengeWeek
-                }주)</td>
+              challenge.challengeWeek
+            }주)</td>
             <td>
               <button class="btn btn-primary">
                 오운완 출석<span class="badge badge-transparent">${
@@ -387,7 +387,7 @@ async function initChallengeList(option) {
             challengeTable.innerHTML += data.challenges
               .map((challenge) => {
                 const profileImage = challenge.hostImageUrl
-                  ? `http://wildbody.s3.amazonaws.com/${challenge.hostImageUrl}`
+                  ? `http://Stock Project.s3.amazonaws.com/${challenge.hostImageUrl}`
                   : `assets/img/avatar/avatar-1.png`;
 
                 let publicView = challenge.publicView;
@@ -400,8 +400,8 @@ async function initChallengeList(option) {
                 return `<tr id="${challenge.id}">
             <td>${challenge.title}</td>
             <td>${challenge.startDate} ~ ${challenge.endDate} (${
-                  challenge.challengeWeek
-                }주)</td>
+              challenge.challengeWeek
+            }주)</td>
             <td>
               <button class="btn btn-primary">
                 오운완 출석<span class="badge badge-transparent">${

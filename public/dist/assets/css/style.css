@@ -478,7 +478,9 @@ select.form-control:not([size]):not([multiple]) {
   position: relative;
   vertical-align: bottom;
   border: 1px solid rgba(0, 40, 100, 0.12);
-  transition: 0.3s border-color, 0.3s background-color;
+  transition:
+    0.3s border-color,
+    0.3s background-color;
 }
 .custom-switch-indicator:before {
   content: '';
@@ -1286,6 +1288,10 @@ table tr:hover .table-links {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.stockTable tbody tr:nth-of-type(odd) {
   background-color: rgba(0, 0, 0, 0.02);
 }
 
@@ -2651,7 +2657,9 @@ a.dropdown-item.active {
   font-weight: 400;
   src: url('../fonts/nunito-v9-latin-regular.eot');
   /* IE9 Compat Modes */
-  src: local('Nunito Regular'), local('Nunito-Regular'),
+  src:
+    local('Nunito Regular'),
+    local('Nunito-Regular'),
     url('../fonts/nunito-v9-latin-regular.eot?#iefix')
       format('embedded-opentype'),
     url('../fonts/nunito-v9-latin-regular.woff2') format('woff2'),
@@ -2667,7 +2675,9 @@ a.dropdown-item.active {
   font-weight: 600;
   src: url('../fonts/nunito-v9-latin-600.eot');
   /* IE9 Compat Modes */
-  src: local('Nunito SemiBold'), local('Nunito-SemiBold'),
+  src:
+    local('Nunito SemiBold'),
+    local('Nunito-SemiBold'),
     url('../fonts/nunito-v9-latin-600.eot?#iefix') format('embedded-opentype'),
     url('../fonts/nunito-v9-latin-600.woff2') format('woff2'),
     url('../fonts/nunito-v9-latin-600.woff') format('woff'),
@@ -2682,7 +2692,9 @@ a.dropdown-item.active {
   font-weight: 700;
   src: url('../fonts/nunito-v9-latin-700.eot');
   /* IE9 Compat Modes */
-  src: local('Nunito Bold'), local('Nunito-Bold'),
+  src:
+    local('Nunito Bold'),
+    local('Nunito-Bold'),
     url('../fonts/nunito-v9-latin-700.eot?#iefix') format('embedded-opentype'),
     url('../fonts/nunito-v9-latin-700.woff2') format('woff2'),
     url('../fonts/nunito-v9-latin-700.woff') format('woff'),
@@ -2697,7 +2709,9 @@ a.dropdown-item.active {
   font-weight: 800;
   src: url('../fonts/nunito-v9-latin-800.eot');
   /* IE9 Compat Modes */
-  src: local('Nunito ExtraBold'), local('Nunito-ExtraBold'),
+  src:
+    local('Nunito ExtraBold'),
+    local('Nunito-ExtraBold'),
     url('../fonts/nunito-v9-latin-800.eot?#iefix') format('embedded-opentype'),
     url('../fonts/nunito-v9-latin-800.woff2') format('woff2'),
     url('../fonts/nunito-v9-latin-800.woff') format('woff'),
@@ -3953,3 +3967,13 @@ body:not(.sidebar-mini)
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.clickable-file td {
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+  transition: all 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+.clickable-file td:hover {
+  text-decoration: underline; /* hover 상태일 때 밑줄 표시 */
+  color: #007bff; /* 선택적으로 텍스트 색상 변경 */
+}

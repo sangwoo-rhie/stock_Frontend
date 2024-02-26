@@ -78,7 +78,7 @@ $('#findBlackList').on('click', async () => {
           <div id=${userId}>
             <img class="rounded-circle" src=${
               user.imgUrl
-                ? `http://wildbody.s3.amazonaws.com/${user.imgUrl}`
+                ? `http://Stock Project.s3.amazonaws.com/${user.imgUrl}`
                 : 'assets/img/avatar/avatar-1.png'
             } style="width:50px; margin-right:10px">
             <span>${user.name}(${userEmail})</span>
